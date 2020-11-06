@@ -17,20 +17,17 @@ parser.add_argument("b")
 parser.add_argument("c")
 args = parser.parse_args()
 
-#mt = MultiTimer()
+mt = MultiTimer()
 
 #Calculate the sizes of things
 if rank == 0:
-    #mt.record(str(rank) + ": Calculate Sizes")
+    mt.record(str(rank) + ": Calculate Sizes")
     dimensions = MatrixReader(args.a).read_dimensions()
-#a = MatrixReader(args.a).read_matrix(close=True)
-#dimensions.append(a.rows)
-#dimensions.append(a.cols)
     print(dimensions[0])
 
     rows_per_proc = int(dimensions[0])/num_procs
 
-mt = MultiTimer()
+#mt = MultiTimer()
 
 #Distribute and recieve work
 if rank == 0:
