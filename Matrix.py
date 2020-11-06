@@ -59,11 +59,11 @@ class MatrixReader:
             self.fp = None
 
     def read_dimensions(self):
-    	self.fp.seek(0, 0)
-    	line = self.fp.readline()
-    	dimensions = line.split()
-    	self.close()
-    	return dimensions
+        self.fp.seek(0, 0)
+        line = self.fp.readline()
+        dimensions = line.split()
+        self.close()
+        return dimensions
 
     def read_rows(self, num_rows=None):
         rows = []
